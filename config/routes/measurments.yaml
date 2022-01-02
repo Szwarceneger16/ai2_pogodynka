@@ -1,0 +1,30 @@
+measurments_index:
+  path: /
+  controller: App\Controller\MeasurmentsController::index
+  methods: GET
+
+measurments_new:
+  path: /new
+  controller: App\Controller\MeasurmentsController::new
+  methods: GET|POST
+
+measurments_show:
+  path: /{id}
+  controller: App\Controller\MeasurmentsController::show
+  methods: GET
+  requirements:
+    id: \d+
+
+measurments_edit:
+  path: /{id}/edit
+  controller: App\Controller\MeasurmentsController::edit
+  methods: GET|POST
+  requirements:
+    id: \d+
+
+measurments_delete:
+  path: /{id}
+  controller: App\Controller\MeasurmentsController::delete
+  methods: POST
+  requirements:
+    id: \d+

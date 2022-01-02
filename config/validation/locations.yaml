@@ -1,0 +1,16 @@
+# config/validator/validation.yaml
+App\Entity\Location:
+  properties:
+    zipCode:
+      - Regex:
+          pattern: '/^\d{2}-\d{3}$/'
+          htmlPattern: '\d{2}-\d{3}'
+      - NotBlank: ~
+    lat:
+      - NotBlank: ~
+    long:
+      - NotBlank: ~
+    city:
+      - NotBlank: ~
+    country:
+      - NotBlank: ~

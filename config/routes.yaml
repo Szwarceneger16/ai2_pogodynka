@@ -1,3 +1,40 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+index:
+  path: /
+  controller: App\Controller\MyController::index
+  methods: GET
+
+app_logout:
+  path: /logout
+  methods: GET
+
+#app_login:
+#  path: /login
+#  methods: GET
+
+weather:
+  path: /weather/{country}/{city}.{_format}
+  requirements:
+    country: \w+
+    city: \w+
+    _format: json|csv
+  controller: App\Controller\MyController::cityAction
+
+weatherId:
+  path: /weather/{id}
+  requirements:
+    id: \d+
+  controller: App\Controller\MyController::cityActionId
+
+locationController:
+  resource: './routes/locations.yaml'
+  type: yaml
+  prefix: /locations
+
+measurmentController:
+  resource: './routes/measurments.yaml'
+  type: yaml
+  prefix: /measurments
+
